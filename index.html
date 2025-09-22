@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamFlix</title>
+    <meta name="description" content="Plateforme de streaming">
+    <style>
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .hero .film-card {
+            position: relative;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: auto;
+            max-width: 700px;
+        }
+
+        .hero .film-card .film-bg {
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+            padding: 2em;
+            position: relative;
+            display: flex;
+            align-items: flex-end; 
+        }
+
+        .hero .film-card .overlay {
+            position: relative;
+            z-index: 2;
+            background-color: rgba(0,0,0,0.7);
+            padding: 1em;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- Lien d'évitement pour aller directement au contenu -->
+    <a class="skip-link" href="#main-content">
+        Aller directement au contenu principal
+    </a>
+
+    <header role="banner">
+        <div class="container">
+            <h1> <a href="/"><img src="images/logo.jpg" alt="Logo showing a vintage TV" width="50" height="50" style="vertical-align:middle"></a> StreamFlix </h1>
+            <!-- Titre principal unique de la page -->
+
+            <nav class="main-navigation" aria-label="Navigation principale">
+                <!-- Navigation principale du site -->
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#films">Films</a></li>
+                    <li><a href="index.html#series">Séries</a></li>
+                    <li><a href="index.html#maliste">Ma Liste</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <!-- Recherche accessible -->
+        <div class="search-zone">
+            <form role="search" aria-label="Recherche de produits">
+                <label for="search-input" class="visually-hidden">
+                    Rechercher un produit
+                </label>
+                <!-- Label caché visuellement mais lu par lecteurs d'écran -->
+                <input type="search"
+                        id="search-input"
+                        name="search"
+                        placeholder="Rechercher un produit..."
+                        aria-describedby="search-help">
+
+                <div id="search-help" class="visually-hidden">
+                    Saisissez le nom du produit recherché puis appuyez sur Entrée
+                </div>
+
+                <button type="submit" aria-label="Lancer la recherche">
+                    <span aria-hidden="true">🔍</span>
+                    <!-- Emoji masqué aux lecteurs d'écran -->
+                </button>
+            </form>
+        </div>
+
+        <nav class="profile navigation" aria-label="Navigation profil">
+            <ul>                     
+                <li><a href="index.html#monprofil">Mon profil</a></li>
+                <li><a href="index.html#maliste">Ma liste</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="main-content" id="main-content">
+
+        <!-- Section pour gérer l'inscription plus tard -->
+        <section class="formulaire-inscription">
+            <h2>Inscription à StreamFlix</h2>
+            <form>
+                <fieldset class="info-perso">
+                    <legend>Informations personnelles</legend>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">Prénom *</label>
+                            <input type="text"
+                                   id="first-name"
+                                   name="first-name"
+                                   required
+                                   minlength="2"
+                                   autocomplete="given-name"
+                                   placeholder="Votre prénom">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name">Nom *</label>
+                            <input type="text"
+                                   id="last-name"
+                                   name="last-name"
+                                   required
+                                   minlength="2"
+                                   autocomplete="family-name"
+                                   placeholder="Votre nom">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bday"> Date de naissance *</label>
+                            <input type="date"
+                                id="bday"
+                                name="bday"
+                                required
+                                autocomplete="bday"
+                                max="2008-09-22">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email"> Adresse mail *</label>
+                            <input type="email"
+                                id="email"
+                                name="email"
+                                required
+                                autocomplete="email">
+                        </div>
+                    </div>
+                </fieldset>
+                <input type="submit" value="S'inscrire"> 
+            </form>
+        </section>
+
+        <!-- Section du film vedette -->
+        <section class="hero">
+            <h2 id="vedette">Film vedette</h2>
+
+                <article class="film-card">
+                <header class="film-header">
+                    <h3>Inception</h3>
+                    <p class="article-meta">
+                        Métadonnées de l'article à compléter (durée etc)
+                    </p>
+                </header>
+
+                <div class="film-bg" style="background-image: url('images/hero.webp');">
+                    <div  class="film-description overlay">
+                        Description : "Un voleur qui s'infiltre dans les rêves des autres pour voler leurs 
+                        secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de 
+                        la voler."
+                        <br>
+                        Détails à ajouter avec du css : <br>
+                        2010, 2h28, 4.5/5, SciFi, Thriller
+                    </div>
+                </div>
+
+                <footer class="film-footer">
+                    <!-- Pied de l'article -->
+                    <a href="index.html#inception" class="read-more">Voir le film</a>
+                </footer>
+                </article>          
+        </section>
+
+        <section class="tendances">
+            <h2 id="tendances">Tendances actuelles</h2>
+
+                <article class="film-card">
+                
+                    <img src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight" width="80" height="120" style="float:left; margin-right:1em; border-radius:4px;">
+                    <header class="film-header">
+                        <h3>The Dark Knight</h3>
+                        <p class="article-meta">
+                            Métadonnées de l'article à compléter (durée etc)
+                        </p>
+                    </header>
+                    <p class="film-description">
+                        Description : <br>
+                        Détails à ajouter avec du css : <br>
+                        2008, 4.8/5, 2h32, Action, Crime, Drama
+                    </p>
+                    <footer class="film-footer">
+                        <!-- Pied de l'article -->
+                        <a href="index.html#darkknight" class="read-more">Voir le film</a>
+                    </footer>
+                </article>
+
+                <article class="film-card">
+                    <img src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar" width="80" height="120" style="float:left; margin-right:1em; border-radius:4px;">
+                    <header class="film-header">
+                        <h3>Interstellar</h3>
+                        <p class="article-meta">
+                            Métadonnées de l'article à compléter (durée etc)
+                        </p>
+                    </header>
+                    <p class="film-description">
+                        Description : 
+                        <br>
+                        Détails à ajouter avec du css : <br>
+                        2014, 4.7/5, 2h49, Sci-Fi, Drama
+                    </p>
+                    <footer class="film-footer">
+                        <!-- Pied de l'article -->
+                        <a href="index.html#interstellar" class="read-more">Voir le film</a>
+                    </footer>
+                </article>
+
+                <article class="film-card">
+                    <img src="images/films/pulp_fiction.jpg" alt="Affiche du film Pulp Fiction" width="80" height="120" style="float:left; margin-right:1em; border-radius:4px;">
+                    <header class="film-header">
+                        <h3>Pulp Fiction</h3>
+                        <p class="article-meta">
+                            Métadonnées de l'article à compléter (durée etc)
+                        </p>
+                    </header>
+                    <p class="film-description">
+                        Description :
+                        <br>
+                        Détails à ajouter avec du css : <br>
+                        1994, 4.6/5, 2h34, Crime, Drama
+                    </p>
+                    <footer class="film-footer">
+                        <!-- Pied de l'article -->
+                        <a href="index.html#pulpfiction" class="read-more">Voir le film</a>
+                    </footer>
+                </article>
+
+        </section>
+
+        <section class="recos">
+            <!-- Section thématique pour les articles en vedette -->
+            <h2 id="recos">Recommandé pour vous</h2>
+
+                <article class="film-card">
+                    <img src="images/films/inception.webp" alt="Affiche du film Inception" width="80" height="120" style="float:left; margin-right:1em; border-radius:4px;">
+                    <header class="film-header">
+                        <h3>Inception</h3>
+                        <p class="article-meta">
+                            Métadonnées de l'article à compléter (durée etc)
+                        </p>
+                    </header>
+                    <p class="film-description">
+                        Description : "Un voleur qui s'infiltre dans les rêves des autres pour voler leurs 
+                        secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de 
+                        la voler."
+                        <br>
+                        Détails à ajouter avec du css : <br>
+                        2010, 2h28, 4.5/5, SciFi, Thriller
+                    </p>
+                    <footer class="film-footer">
+                        <a href="index.html#inception" class="read-more">Voir le film</a>
+                    </footer>
+                </article>
+
+                <article class="film-card">
+                    <img src="images/films/matrix.jpeg" alt="Affiche du film The Matrix" width="80" height="120" style="float:left; margin-right:1em; border-radius:4px;">
+                    <header class="film-header">
+                        <h3>The Matrix</h3>
+                        <p class="article-meta">
+                            Métadonnées de l'article à compléter (durée etc)
+                        </p>
+                    </header>
+                    <p class="film-description">
+                        Description :
+                        <br>
+                        Détails à ajouter avec du css : <br>
+                        1999, 4.5/5, 2h16, Action, Sci-Fi
+                    </p>
+                    <footer class="film-footer">
+                        <!-- Pied de l'article -->
+                        <a href="index.html#matrix" class="read-more">Voir le film</a>
+                    </footer>
+                </article>
+
+                <article class="film-card">
+                    <img src="images/films/forrest_gump.jpg" alt="Affiche du film Forrest Gump" width="80" height="120" style="float:left; margin-right:1em; border-radius:4px;">
+                    <header class="film-header">
+                        <h3>Forrest Gump</h3>
+                        <p class="article-meta">
+                            Métadonnées de l'article à compléter (durée etc)
+                        </p>
+                    </header>
+                    <p class="film-description">
+                        Description : 
+                        <br>
+                        Détails à ajouter avec du css : <br>
+                        1994, 4.4/5, 2h22, Drama, Romance
+                    </p>
+                    <footer class="film-footer">
+                        <a href="index.html#forrestgump" class="read-more">Voir le film</a>
+                    </footer>
+                </article>
+
+        </section>
+
+        <section class="nouveautes">
+            <!-- Section thématique pour les articles en vedette -->
+            <h2 id="nouveautes">Nouveautés</h2>
+
+                <article class="film-card">
+                    <img src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar" width="80" height="120" style="float:left; margin-right:1em; border-radius:4px;">
+                    <header class="film-header">
+                        <h3>Interstellar</h3>
+                        <p class="article-meta">
+                            Métadonnées de l'article à compléter (durée etc)
+                        </p>
+                    </header>
+                    <p class="film-description">
+                        Description : 
+                        <br>
+                        Détails à ajouter avec du css : <br>
+                        2014, 4.7/5, 2h49, Sci-Fi, Drama
+                    </p>
+                    <footer class="film-footer">
+                        <a href="index.html#interstellar" class="read-more">Voir le film</a>
+                    </footer>
+                </article>
+
+                <article class="film-card">
+                    <img src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight" width="80" height="120" style="float:left; margin-right:1em; border-radius:4px;">
+                    <header class="film-header">
+                        <h3>The Dark Knight</h3>
+                        <p class="article-meta">
+                            Métadonnées de l'article à compléter (durée etc)
+                        </p>
+                    </header>
+                    <p class="film-description">
+                        Description : <br>
+                        Détails à ajouter avec du css : <br>
+                        2008, 4.8/5, 2h32, Action, Crime, Drama
+                    </p>
+                    <footer class="film-footer">
+                        <a href="index.html#darkknight" class="read-more">Voir le film</a>
+                    </footer>
+                </article>
+
+                <article class="film-card">
+                    <img src="images/films/inception.webp" alt="Affiche du film Inception" width="80" height="120" style="float:left; margin-right:1em; border-radius:4px;">
+                    <header class="film-header">
+                        <h3>Inception</h3>
+                        <p class="article-meta">
+                            Métadonnées de l'article à compléter (durée etc)
+                        </p>
+                    </header>
+                    <p class="film-description">
+                        Description : "Un voleur qui s'infiltre dans les rêves des autres pour voler leurs 
+                        secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de 
+                        la voler."
+                        <br>
+                        Détails à ajouter avec du css : <br>
+                        2010, 2h28, 4.5/5, SciFi, Thriller
+                    </p>
+                    <footer class="film-footer">
+                        <a href="index.html#inception" class="read-more">Voir le film</a>
+                    </footer>
+                </article>
+
+        </section>
+
+        <section class="films">
+            <h2>Nos films</h2>
+                <img src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight" width="80" height="120" style="border-radius:4px;">
+                <img src="images/films/forrest_gump.jpg" alt="Affiche du film Forrest Gump" width="80" height="120" style="border-radius:4px;">
+                <img src="images/films/inception.webp" alt="Affiche du film Inception" width="80" height="120" style="border-radius:4px;">
+                <img src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar" width="80" height="120" style="border-radius:4px;">
+                <img src="images/films/matrix.jpeg" alt="Affiche du film The Matrix" width="80" height="120" style="border-radius:4px;">
+                <img src="images/films/pulp_fiction.jpg" alt="Affiche du film Pulp Fiction" width="80" height="120" style="border-radius:4px;">
+        </section>
+
+        <section class="series">
+            <h2>Nos séries</h2>
+                Affichage des séries
+                <br><br>
+        </section>
+
+    </main>
+    <footer> 
+        à propos <br>
+        Suivez-nous sur les réseaux ! <br>
+        Copyright <br>
+    </footer>
+    
+</body>
+</html>
