@@ -1,10 +1,9 @@
-/* reset.css - Normalisation des styles par défaut */
+/* Normalisation des styles par défaut */
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 button {
@@ -17,8 +16,21 @@ button {
 
 button:active {
     transform: scale(0.98);
-    box-shadow: 2px 2px 22px 2px rgba(200, 100, 100, 1);
+    box-shadow: 4px 4px 10px 2px rgba(0,0,0,0.4);
 }
+
+
+/* Variables CSS pour la cohérence */
+
+:root {
+    --primary-color: #C4C6F3 ;
+    --secondary-color: #2572ad;
+    --text-color: #333;
+    --bg-color: #c4def3;
+    --border-color: #dee2e6;
+
+}
+
 
 /* Styles de base pour mobile (320px+) */
 .container {
@@ -30,6 +42,12 @@ button:active {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5);
 }
 
 /* Tablette (768px+) */
@@ -52,24 +70,17 @@ button:active {
 /* Desktop (1024px+) */
 @media screen and (min-width: 1024px) {
     .container {
-        max-width: 1200px;
+        max-width: 400px;
         padding: 2rem;
     }
 
     .grid-item {
         flex: 1 1 30%;
     }
-}
 
-
-/* Variables CSS pour la cohérence */
-
-:root {
-    --primary-color: #C4C6F3 ;
-    --secondary-color: #2572ad;
-    --text-color: #333;
-    --bg-color: #c4def3;
-    --border-color: #dee2e6;
+    section {
+        /* max-width: 400px; */
+    }
 }
 
 
@@ -80,32 +91,33 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     line-height: 1.6;
+    display: grid;
+    justify-content: center;
+    align-items:center;
+}
+
+main {
+    display: grid;
+    justify-content: center;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
+    /* grid-template-columns: auto auto auto; */
+    padding: 10px;
 }
 
 .container > div {
-  background-color: #f1f1f1;
-  border: 1px solid black;
-  padding: 10px;
-  font-size: 30px;
-  text-align: center;
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
 }
 
 .site-header {
     background-color: var(--primary-color);
     color: #333;
     padding: 1rem 0;
-}
-
-.site-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .nav-link {
@@ -150,12 +162,10 @@ body {
 /* Configuration de la section hero et overlay */
 
 .hero-card {
-    position: relative;
     color: white;
     border-radius: 8px;
     overflow: hidden;
     margin: auto;
-    max-width: 700px;
 }
 
 .hero-card .film-header {
@@ -168,12 +178,10 @@ body {
     min-height: 300px;
     padding: 2em;
     position: relative;
-    display: flex;
-    align-items: flex-end; 
+    /* align-items: flex-end;  */
 }
 
 .hero-card .overlay {
-    position: relative;
     z-index: 2;
     background-color: rgba(0,0,0,0.7);
     padding: 1em;
@@ -192,9 +200,9 @@ body {
 /* Affichage des grilles de films */
 
 .grid {
-    border: 1px solid black;
-    margin:auto;
-    padding: auto;
+    /* border: 1px solid black; */
+    padding: 5px;
+    margin: 10px;
     justify-content: center;
 }
 
@@ -204,6 +212,10 @@ body {
     margin: 10px;
     text-align: center;
     border-radius: 15px;
+}
+
+.film-card {
+    border-radius: 10px;
 }
 
 .film-card:hover {
