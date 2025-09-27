@@ -14,7 +14,7 @@
     </a>
 
     <header class="site-header" role="banner">
-        <div class="container">
+        <div class="container left-side">
             <h1> <a href="/"><img src="images/logo.jpg" alt="Logo showing a vintage TV" width="50" height="50" style="vertical-align:middle"></a> StreamFlix </h1>
 
             <nav class="main-navigation" aria-label="Navigation principale">
@@ -26,31 +26,86 @@
                     <li><a href="index.html#maliste">Ma Liste</a></li>
                 </ul>
             </nav>
+
+            <!-- Recherche accessible -->
+            <div class="container search-zone">
+                <form role="search" aria-label="Recherche de produits">
+                    <label for="search-input" class="visually-hidden">
+                        Rechercher un produit
+                    </label>
+                    <!-- Label caché visuellement mais lu par lecteurs d'écran -->
+                    <input type="search"
+                            id="search-input"
+                            name="search"
+                            placeholder="Rechercher un produit..."
+                            aria-describedby="search-help">
+
+                    <div id="search-help" class="visually-hidden">
+                        Saisissez le nom du produit recherché puis appuyez sur Entrée
+                    </div>
+
+                    <button type="submit" aria-label="Lancer la recherche">
+                        <span aria-hidden="true">🔍</span>
+                        <!-- Emoji masqué aux lecteurs d'écran -->
+                    </button>
+                </form>
+            </div>
         </div>
 
+        <div class="container right-side">
+            <!-- Section pour gérer l'inscription plus tard -->
+            <section class="formulaire-inscription">
+                <h2>Inscription à StreamFlix</h2>
+                <form>
+                    <fieldset class="info-perso">
+                        <legend>Informations personnelles</legend>
 
-        <!-- Recherche accessible -->
-        <div class="container search-zone">
-            <form role="search" aria-label="Recherche de produits">
-                <label for="search-input" class="visually-hidden">
-                    Rechercher un produit
-                </label>
-                <!-- Label caché visuellement mais lu par lecteurs d'écran -->
-                <input type="search"
-                        id="search-input"
-                        name="search"
-                        placeholder="Rechercher un produit..."
-                        aria-describedby="search-help">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">Prénom *</label>
+                                <input type="text"
+                                    id="first-name"
+                                    name="first-name"
+                                    required
+                                    minlength="2"
+                                    autocomplete="given-name"
+                                    placeholder="Votre prénom">
+                            </div>
 
-                <div id="search-help" class="visually-hidden">
-                    Saisissez le nom du produit recherché puis appuyez sur Entrée
-                </div>
+                            <div class="form-group">
+                                <label for="last-name">Nom *</label>
+                                <input type="text"
+                                    id="last-name"
+                                    name="last-name"
+                                    required
+                                    minlength="2"
+                                    autocomplete="family-name"
+                                    placeholder="Votre nom">
+                            </div>
 
-                <button type="submit" aria-label="Lancer la recherche">
-                    <span aria-hidden="true">🔍</span>
-                    <!-- Emoji masqué aux lecteurs d'écran -->
-                </button>
-            </form>
+                            <div class="form-group">
+                                <label for="bday"> Date de naissance *</label>
+                                <input type="date"
+                                    id="bday"
+                                    name="bday"
+                                    required
+                                    autocomplete="bday"
+                                    max="2008-09-22">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email"> Adresse mail *</label>
+                                <input type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    autocomplete="email">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <input type="submit" value="S'inscrire"> 
+                </form>
+            </section>
         </div>
 
         <nav class="profile navigation" aria-label="Navigation profil">
@@ -63,60 +118,6 @@
     </header>
 
     <main class="main-content" id="main-content">
-
-        <!-- Section pour gérer l'inscription plus tard -->
-        <section class="formulaire-inscription">
-            <h2>Inscription à StreamFlix</h2>
-            <form>
-                <fieldset class="info-perso">
-                    <legend>Informations personnelles</legend>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="first-name">Prénom *</label>
-                            <input type="text"
-                                   id="first-name"
-                                   name="first-name"
-                                   required
-                                   minlength="2"
-                                   autocomplete="given-name"
-                                   placeholder="Votre prénom">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="last-name">Nom *</label>
-                            <input type="text"
-                                   id="last-name"
-                                   name="last-name"
-                                   required
-                                   minlength="2"
-                                   autocomplete="family-name"
-                                   placeholder="Votre nom">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="bday"> Date de naissance *</label>
-                            <input type="date"
-                                id="bday"
-                                name="bday"
-                                required
-                                autocomplete="bday"
-                                max="2008-09-22">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email"> Adresse mail *</label>
-                            <input type="email"
-                                id="email"
-                                name="email"
-                                required
-                                autocomplete="email">
-                        </div>
-                    </div>
-                </fieldset>
-                <input type="submit" value="S'inscrire"> 
-            </form>
-        </section>
 
         <!-- Section du film vedette -->
         <section class="hero">
@@ -343,12 +344,30 @@
 
             <section class="films">
                 <h2>Nos films</h2>
-                    <img class="mini" src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight">
-                    <img class="mini" src="images/films/forrest_gump.jpg" alt="Affiche du film Forrest Gump">
-                    <img class="mini" src="images/films/inception.webp" alt="Affiche du film Inception">
-                    <img class="mini" src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar">
-                    <img class="mini" src="images/films/matrix.jpeg" alt="Affiche du film The Matrix">
-                    <img class="mini" src="images/films/pulp_fiction.jpg" alt="Affiche du film Pulp Fiction">
+                    <div class="mini-film">
+                        <img class="mini-img" src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight">
+                        <span class="mini-infos"> The Dark Knight, 2h32 </span>
+                    </div>
+                    <div class="mini-film">
+                        <img class="mini" src="images/films/forrest_gump.jpg" alt="Affiche du film Forrest Gump">
+                        <span class="mini-infos"> Forrest Gump, 2h22 </span>
+                    </div>
+                    <div class="mini-film">
+                        <img class="mini" src="images/films/inception.webp" alt="Affiche du film Inception">
+                        <span class="mini-infos"> Inception, 2h28 </span>
+                    </div>
+                    <div class="mini-film">
+                        <img class="mini" src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar">
+                        <span class="mini-infos"> Interstellar, 2h </span>
+                    </div>
+                    <div class="mini-film">
+                        <img class="mini" src="images/films/matrix.jpeg" alt="Affiche du film The Matrix">
+                        <span class="mini-infos"> The Matrix, 2h16 </span>
+                    </div>
+                    <div class="mini-film">
+                        <img class="mini" src="images/films/pulp_fiction.jpg" alt="Affiche du film Pulp Fiction"> 
+                        <span class="mini-infos"> Pulp Fiction, 2h34 </span>
+                    </div>
             </section>
 
             <section class="series">
