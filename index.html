@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StreamFlix</title>
     <meta name="description" content="Plateforme de streaming">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,107 +17,40 @@
     </a>
 
     <header class="site-header" role="banner">
-        <div class="container left-side">
-            <h1> <a href="/"><img src="images/logo.jpg" alt="Logo showing a vintage TV" width="50" height="50" style="vertical-align:middle"></a> StreamFlix </h1>
-
-            <nav class="main-navigation" aria-label="Navigation principale">
-                <!-- Navigation principale du site -->
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="index.html#films">Films</a></li>
-                    <li><a href="index.html#series">Séries</a></li>
-                    <li><a href="index.html#maliste">Ma Liste</a></li>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">
+                <h1> <a href="/"><img src="images/logo.jpg" alt="Logo showing a vintage TV" width="50" height="50" style="vertical-align:middle"></a> StreamFlix </h1>
+            </span>
+            <button class="navbar-toggler" type="btn button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Films</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Série</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Ma Liste</a>
+                    </li>
                 </ul>
-            </nav>
-
-            <!-- Recherche accessible -->
-            <div class="container search-zone">
-                <form role="search" aria-label="Recherche de produits">
-                    <label for="search-input" class="visually-hidden">
-                        Rechercher un produit
-                    </label>
-                    <!-- Label caché visuellement mais lu par lecteurs d'écran -->
-                    <input type="search"
-                            id="search-input"
-                            name="search"
-                            placeholder="Rechercher un produit..."
-                            aria-describedby="search-help">
-
-                    <div id="search-help" class="visually-hidden">
-                        Saisissez le nom du produit recherché puis appuyez sur Entrée
-                    </div>
-
-                    <button type="submit" aria-label="Lancer la recherche">
-                        <span aria-hidden="true">🔍</span>
-                        <!-- Emoji masqué aux lecteurs d'écran -->
-                    </button>
-                </form>
             </div>
+
+            <form class="d-flex" role="search" aria-label="Recherche de profuits">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <div id="search-help" class="visually-hidden">
+                    Saisissez le nom du produit recherché puis appuyez sur Entrée
+                </div>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
-
-        <div class="container right-side">
-            <!-- Section pour gérer l'inscription plus tard -->
-            <section class="formulaire-inscription">
-                <h2>Inscription à StreamFlix</h2>
-                <form>
-                    <fieldset class="info-perso">
-                        <legend>Informations personnelles</legend>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="first-name">Prénom *</label>
-                                <input type="text"
-                                    id="first-name"
-                                    name="first-name"
-                                    required
-                                    minlength="2"
-                                    autocomplete="given-name"
-                                    placeholder="Votre prénom">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="last-name">Nom *</label>
-                                <input type="text"
-                                    id="last-name"
-                                    name="last-name"
-                                    required
-                                    minlength="2"
-                                    autocomplete="family-name"
-                                    placeholder="Votre nom">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="bday"> Date de naissance *</label>
-                                <input type="date"
-                                    id="bday"
-                                    name="bday"
-                                    required
-                                    autocomplete="bday"
-                                    max="2008-09-22">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email"> Adresse mail *</label>
-                                <input type="email"
-                                    id="email"
-                                    name="email"
-                                    required
-                                    autocomplete="email">
-                            </div>
-                        </div>
-                    </fieldset>
-                    <input type="submit" value="S'inscrire"> 
-                </form>
-            </section>
-        </div>
-
-        <nav class="profile navigation" aria-label="Navigation profil">
-            <ul>                     
-                <li><a href="index.html#monprofil">Mon profil</a></li>
-                <li><a href="index.html#maliste">Ma liste</a></li>
-            </ul>
         </nav>
-
     </header>
 
     <main class="main-content" id="main-content">
@@ -148,232 +84,344 @@
                 </article>          
         </section>
 
+        <form>
+            <h2>Inscription à StreamFlix</h2>
+            <fieldset class="info-perso">
+                <legend>Informations personnelles</legend>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">Prénom *</label>
+                        <input type="text"
+                            id="first-name"
+                            name="first-name"
+                            required
+                            minlength="2"
+                            autocomplete="given-name"
+                            placeholder="Votre prénom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Nom *</label>
+                        <input type="text"
+                            id="last-name"
+                            name="last-name"
+                            required
+                            minlength="2"
+                            autocomplete="family-name"
+                            placeholder="Votre nom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bday"> Date de naissance *</label>
+                        <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-title="Vous devez être majeurs"></i>
+                        <input type="date"
+                            id="bday"
+                            name="bday"
+                            required
+                            autocomplete="bday"
+                            max="2008-09-22">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"> Adresse mail *</label>
+                        <input type="email"
+                            id="email"
+                            name="email"
+                            required
+                            autocomplete="email">
+                    </div>
+                </div>
+            </fieldset>
+            <input type="submit" value="S'inscrire"> 
+        </form>
+
         <!-- Grille CSS pour organiser les catégories -->
-        <div class="grid">
+        <div class="container text-center">
         <!-- Section thématique pour les films tendances du moment -->
             <section class="tendances">
                 <h2 id="tendances">Tendances actuelles</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 col-lg-3">
+                            <div class="card">
+                                <img class="mini" src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight">
+                                <header class="film-header">
+                                    <h3>The Dark Knight</h3>
+                                    <p class="article-meta">
+                                        Métadonnées de l'article à compléter (durée etc)
+                                    </p>
+                                </header>
+                                <p class="film-description">
+                                    Description : <br>
+                                    Détails à ajouter avec du css : <br>
+                                    2008, 4.8/5, 2h32 <br>
+                                    <span class="badge text-bg-secondary">Action</span>
+                                    <span class="badge text-bg-secondary">Crime</span>
+                                    <span class="badge text-bg-secondary">Drama</span>
+                                </p>
+                                <footer class="film-footer">
+                                    <a href="index.html#darkknight" class="read-more">Voir le film</a>
+                                </footer>
+                            </div>
+                        </div>
 
-                    <article class="film-card">
-                    
-                        <img class="mini" src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight">
-                        <header class="film-header">
-                            <h3>The Dark Knight</h3>
-                            <p class="article-meta">
-                                Métadonnées de l'article à compléter (durée etc)
-                            </p>
-                        </header>
-                        <p class="film-description">
-                            Description : <br>
-                            Détails à ajouter avec du css : <br>
-                            2008, 4.8/5, 2h32, Action, Crime, Drama
-                        </p>
-                        <footer class="film-footer">
-                            <a href="index.html#darkknight" class="read-more">Voir le film</a>
-                        </footer>
-                    </article>
-
-                    <article class="film-card">
-                        <img class="mini" src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar">
-                        <header class="film-header">
-                            <h3>Interstellar</h3>
-                            <p class="article-meta">
-                                Métadonnées de l'article à compléter (durée etc)
-                            </p>
-                        </header>
-                        <p class="film-description">
-                            Description : 
-                            <br>
-                            Détails à ajouter avec du css : <br>
-                            2014, 4.7/5, 2h49, Sci-Fi, Drama
-                        </p>
-                        <footer class="film-footer">
-                            <a href="index.html#interstellar" class="read-more">Voir le film</a>
-                        </footer>
-                    </article>
-
-                    <article class="film-card">
-                        <img class="mini" src="images/films/pulp_fiction.jpg" alt="Affiche du film Pulp Fiction">
-                        <header class="film-header">
-                            <h3>Pulp Fiction</h3>
-                            <p class="article-meta">
-                                Métadonnées de l'article à compléter (durée etc)
-                            </p>
-                        </header>
-                        <p class="film-description">
-                            Description :
-                            <br>
-                            Détails à ajouter avec du css : <br>
-                            1994, 4.6/5, 2h34, Crime, Drama
-                        </p>
-                        <footer class="film-footer">
-                            <a href="index.html#pulpfiction" class="read-more">Voir le film</a>
-                        </footer>
-                    </article>
-
+                        <div class="col-md-4 col-lg-3">
+                            <div class="card">
+                                <img class="mini" src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar">
+                                <header class="film-header">
+                                    <h3>Interstellar</h3>
+                                    <p class="article-meta">
+                                        Métadonnées de l'article à compléter (durée etc)
+                                    </p>
+                                </header>
+                                <p class="film-description">
+                                    Description : 
+                                    <br>
+                                    Détails à ajouter avec du css : <br>
+                                    2014, 4.7/5, 2h49 <br>
+                                    <span class="badge text-bg-secondary">Sci-Fi</span>
+                                    <span class="badge text-bg-secondary">Drama</span>
+                                </p>
+                                <footer class="film-footer">
+                                    <a href="index.html#interstellar" class="read-more">Voir le film</a>
+                                </footer>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-lg-3">
+                            <div class="card">
+                                <img class="mini" src="images/films/pulp_fiction.jpg" alt="Affiche du film Pulp Fiction">
+                                <header class="film-header">
+                                    <h3>Pulp Fiction</h3>
+                                    <p class="article-meta">
+                                        Métadonnées de l'article à compléter (durée etc)
+                                    </p>
+                                </header>
+                                <p class="film-description">
+                                    Description :
+                                    <br>
+                                    Détails à ajouter avec du css : <br>
+                                    1994, 4.6/5, 2h34 <br>
+                                    <span class="badge text-bg-secondary">Crime</span>
+                                    <span class="badge text-bg-secondary">Drama</span>
+                                </p>
+                                <footer class="film-footer">
+                                    <a href="index.html#pulpfiction" class="read-more">Voir le film</a>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
             </section>
 
             <section class="recos">
                 <!-- Section thématique pour les films recommandés à l'utilisateur -->
                 <h2 id="recos">Recommandé pour vous</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 col-lg-3">
+                            <div class="card">
+                                <img class="mini" src="images/films/inception.webp" alt="Affiche du film Inception">
+                                <header class="film-header">
+                                    <h3>Inception</h3>
+                                    <p class="article-meta">
+                                        Métadonnées de l'article à compléter (durée etc)
+                                    </p>
+                                </header>
+                                <p class="film-description">
+                                    Description : "Un voleur qui s'infiltre dans les rêves des autres pour voler leurs 
+                                    secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de 
+                                    la voler."
+                                    <br>
+                                    Détails à ajouter avec du css : <br>
+                                    2010, 2h28, 4.5/5 <br>
+                                    <span class="badge text-bg-secondary">Sci-Fi</span>
+                                    <span class="badge text-bg-secondary">Thriller</span>
+                                </p>
+                                <footer class="film-footer">
+                                    <a href="index.html#inception" class="read-more">Voir le film</a>
+                                </footer>
+                            </div>
+                        </div>
+                        
 
-                    <article class="film-card">
-                        <img class="mini" src="images/films/inception.webp" alt="Affiche du film Inception">
-                        <header class="film-header">
-                            <h3>Inception</h3>
-                            <p class="article-meta">
-                                Métadonnées de l'article à compléter (durée etc)
-                            </p>
-                        </header>
-                        <p class="film-description">
-                            Description : "Un voleur qui s'infiltre dans les rêves des autres pour voler leurs 
-                            secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de 
-                            la voler."
-                            <br>
-                            Détails à ajouter avec du css : <br>
-                            2010, 2h28, 4.5/5, SciFi, Thriller
-                        </p>
-                        <footer class="film-footer">
-                            <a href="index.html#inception" class="read-more">Voir le film</a>
-                        </footer>
-                    </article>
+                        <div class="col-md-4 col-lg-3">
+                            <div class="card">
+                                <img class="mini" src="images/films/matrix.jpeg" alt="Affiche du film The Matrix">
+                                <header class="film-header">
+                                    <h3>The Matrix</h3>
+                                    <p class="article-meta">
+                                        Métadonnées de l'article à compléter (durée etc)
+                                    </p>
+                                </header>
+                                <p class="film-description">
+                                    Description :
+                                    <br>
+                                    Détails à ajouter avec du css : <br>
+                                    1999, 4.5/5, 2h16 <br>
+                                    <span class="badge text-bg-secondary">Action</span>
+                                    <span class="badge text-bg-secondary">Sci-Fi</span>
+                                </p>
+                                <footer class="film-footer">
+                                    <a href="index.html#matrix" class="read-more">Voir le film</a>
+                                </footer>
+                            </div>
+                        </div>
 
-                    <article class="film-card">
-                        <img class="mini" src="images/films/matrix.jpeg" alt="Affiche du film The Matrix">
-                        <header class="film-header">
-                            <h3>The Matrix</h3>
-                            <p class="article-meta">
-                                Métadonnées de l'article à compléter (durée etc)
-                            </p>
-                        </header>
-                        <p class="film-description">
-                            Description :
-                            <br>
-                            Détails à ajouter avec du css : <br>
-                            1999, 4.5/5, 2h16, Action, Sci-Fi
-                        </p>
-                        <footer class="film-footer">
-                            <a href="index.html#matrix" class="read-more">Voir le film</a>
-                        </footer>
-                    </article>
-
-                    <article class="film-card">
-                        <img class="mini" src="images/films/forrest_gump.jpg" alt="Affiche du film Forrest Gump">
-                        <header class="film-header">
-                            <h3>Forrest Gump</h3>
-                            <p class="article-meta">
-                                Métadonnées de l'article à compléter (durée etc)
-                            </p>
-                        </header>
-                        <p class="film-description">
-                            Description : 
-                            <br>
-                            Détails à ajouter avec du css : <br>
-                            1994, 4.4/5, 2h22, Drama, Romance
-                        </p>
-                        <footer class="film-footer">
-                            <a href="index.html#forrestgump" class="read-more">Voir le film</a>
-                        </footer>
-                    </article>
-
+                        <div class="col-md-4 col-lg-3">
+                            <div class="card">
+                                <img class="mini" src="images/films/forrest_gump.jpg" alt="Affiche du film Forrest Gump">
+                                <header class="film-header">
+                                    <h3>Forrest Gump</h3>
+                                    <p class="article-meta">
+                                        Métadonnées de l'article à compléter (durée etc)
+                                    </p>
+                                </header>
+                                <p class="film-description">
+                                    Description : 
+                                    <br>
+                                    Détails à ajouter avec du css : <br>
+                                    1994, 4.4/5, 2h22 <br>
+                                    <span class="badge text-bg-secondary">Drama</span>
+                                    <span class="badge text-bg-secondary">Romance</span>
+                                </p>
+                                <footer class="film-footer">
+                                    <a href="index.html#forrestgump" class="read-more">Voir le film</a>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
             </section>
 
             <section class="nouveautes">
                 <!-- Section thématique pour les nouveautés dela plateforme -->
                 <h2 id="nouveautes">Nouveautés</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 col-lg-3">
+                            <div class="card">
+                                <img class="mini" src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar">
+                                <header class="film-header">
+                                    <h3>Interstellar</h3>
+                                    <p class="article-meta">
+                                        Métadonnées de l'article à compléter (durée etc)
+                                    </p>
+                                </header>
+                                <p class="film-description">
+                                    Description : 
+                                    <br>
+                                    Détails à ajouter avec du css : <br>
+                                    2014, 4.7/5, 2h49 <br>
+                                    <span class="badge text-bg-secondary">Sci-Fi</span>
+                                    <span class="badge text-bg-secondary">Drama</span>
+                                </p>
+                                <footer class="film-footer">
+                                    <a href="index.html#interstellar" class="read-more">Voir le film</a>
+                                </footer>
+                            </div>
+                        </div>
 
-                    <article class="film-card">
-                        <img class="mini" src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar">
-                        <header class="film-header">
-                            <h3>Interstellar</h3>
-                            <p class="article-meta">
-                                Métadonnées de l'article à compléter (durée etc)
-                            </p>
-                        </header>
-                        <p class="film-description">
-                            Description : 
-                            <br>
-                            Détails à ajouter avec du css : <br>
-                            2014, 4.7/5, 2h49, Sci-Fi, Drama
-                        </p>
-                        <footer class="film-footer">
-                            <a href="index.html#interstellar" class="read-more">Voir le film</a>
-                        </footer>
-                    </article>
+                        <div class="col-md-4 col-lg-3">
+                            <div class="card">
+                                <img class="mini" src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight">
+                                <header class="film-header">
+                                    <h3>The Dark Knight</h3>
+                                    <p class="article-meta">
+                                        Métadonnées de l'article à compléter (durée etc)
+                                    </p>
+                                </header>
+                                <p class="film-description">
+                                    Description : <br>
+                                    Détails à ajouter avec du css : <br>
+                                    2008, 4.8/5, 2h32 <br>
+                                    <span class="badge text-bg-secondary">Action</span>
+                                    <span class="badge text-bg-secondary">Crime</span>
+                                    <span class="badge text-bg-secondary">Drama</span>
+                                </p>
+                                <footer class="film-footer">
+                                    <a href="index.html#darkknight" class="read-more">Voir le film</a>
+                                </footer>
+                            </div>
+                        </div>
 
-                    <article class="film-card">
-                        <img class="mini" src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight">
-                        <header class="film-header">
-                            <h3>The Dark Knight</h3>
-                            <p class="article-meta">
-                                Métadonnées de l'article à compléter (durée etc)
-                            </p>
-                        </header>
-                        <p class="film-description">
-                            Description : <br>
-                            Détails à ajouter avec du css : <br>
-                            2008, 4.8/5, 2h32, Action, Crime, Drama
-                        </p>
-                        <footer class="film-footer">
-                            <a href="index.html#darkknight" class="read-more">Voir le film</a>
-                        </footer>
-                    </article>
+                        <div class="col-md-4 col-lg-3">
+                            <div class="card">
+                                <img class="mini" src="images/films/inception.webp" alt="Affiche du film Inception">
+                                <header class="film-header">
+                                    <h3>Inception</h3>
+                                    <p class="article-meta">
+                                        Métadonnées de l'article à compléter (durée etc)
+                                    </p>
+                                </header>
+                                <p class="film-description">
+                                    Description : "Un voleur qui s'infiltre dans les rêves des autres pour voler leurs 
+                                    secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de 
+                                    la voler."
+                                    <br>
+                                    Détails à ajouter avec du css : <br>
+                                    2010, 2h28, 4.5/5 <br>
+                                    <span class="badge text-bg-secondary">Sci-Fi</span>
+                                    <span class="badge text-bg-secondary">Thriller</span>
 
-                    <article class="film-card">
-                        <img class="mini" src="images/films/inception.webp" alt="Affiche du film Inception">
-                        <header class="film-header">
-                            <h3>Inception</h3>
-                            <p class="article-meta">
-                                Métadonnées de l'article à compléter (durée etc)
-                            </p>
-                        </header>
-                        <p class="film-description">
-                            Description : "Un voleur qui s'infiltre dans les rêves des autres pour voler leurs 
-                            secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de 
-                            la voler."
-                            <br>
-                            Détails à ajouter avec du css : <br>
-                            2010, 2h28, 4.5/5, SciFi, Thriller
-                        </p>
-                        <footer class="film-footer">
-                            <a href="index.html#inception" class="read-more">Voir le film</a>
-                        </footer>
-                    </article>
+                                </p>
+                                <footer class="film-footer">
+                                    <a href="index.html#inception" class="read-more">Voir le film</a>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
 
             </section>
 
             <section class="films">
                 <h2>Nos films</h2>
-                    <div class="mini-film">
-                        <img class="mini-img" src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight">
-                        <span class="mini-infos"> The Dark Knight, 2h32 </span>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mini-film">
+                            <img class="mini-img" src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight">
+                            <span class="mini-infos"> The Dark Knight, 2h32 </span>
+                        </div>
                     </div>
-                    <div class="mini-film">
-                        <img class="mini" src="images/films/forrest_gump.jpg" alt="Affiche du film Forrest Gump">
-                        <span class="mini-infos"> Forrest Gump, 2h22 </span>
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mini-film">
+                            <img class="mini" src="images/films/forrest_gump.jpg" alt="Affiche du film Forrest Gump">
+                            <span class="mini-infos"> Forrest Gump, 2h22 </span>
+                        </div>
                     </div>
-                    <div class="mini-film">
-                        <img class="mini" src="images/films/inception.webp" alt="Affiche du film Inception">
-                        <span class="mini-infos"> Inception, 2h28 </span>
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mini-film">
+                            <img class="mini" src="images/films/inception.webp" alt="Affiche du film Inception">
+                            <span class="mini-infos"> Inception, 2h28 </span>
+                        </div>
                     </div>
-                    <div class="mini-film">
-                        <img class="mini" src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar">
-                        <span class="mini-infos"> Interstellar, 2h </span>
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mini-film">
+                            <img class="mini" src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar">
+                            <span class="mini-infos"> Interstellar, 2h </span>
+                        </div>
                     </div>
-                    <div class="mini-film">
-                        <img class="mini" src="images/films/matrix.jpeg" alt="Affiche du film The Matrix">
-                        <span class="mini-infos"> The Matrix, 2h16 </span>
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mini-film">
+                            <img class="mini" src="images/films/matrix.jpeg" alt="Affiche du film The Matrix">
+                            <span class="mini-infos"> The Matrix, 2h16 </span>
+                        </div>
                     </div>
-                    <div class="mini-film">
-                        <img class="mini" src="images/films/pulp_fiction.jpg" alt="Affiche du film Pulp Fiction"> 
-                        <span class="mini-infos"> Pulp Fiction, 2h34 </span>
+                    <div class="col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mini-film">
+                            <img class="mini" src="images/films/pulp_fiction.jpg" alt="Affiche du film Pulp Fiction"> 
+                            <span class="mini-infos"> Pulp Fiction, 2h34 </span>
+                        </div>
                     </div>
+                </div>
             </section>
 
             <section class="series">
                 <h2>Nos séries</h2>
                     Affichage des séries
-                    <br><br>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-6 col-md-4 col-lg-2">
+                            <div class="card mini">
+                                Pas de série pour le moment
+                            </div>
+                        </div>
+                    </div>
             </section>
         </div>
     </main>
@@ -383,5 +431,10 @@
         Copyright <br>
     </footer>
     
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+// Règles de style pour la section hero
+
+.hero-card {
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.hero-card .film-header {
+    color: black;
+}
+
+.hero-card .film-bg {
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    padding: 2em;
+    position: relative;
+    /* align-items: flex-end;  */
+}
+
+.hero-card .overlay {
+    z-index: 2;
+    background-color: rgba(0,0,0,0.7);
+    padding: 1em;
+}
