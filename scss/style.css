@@ -3,8 +3,7 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 button {
@@ -16,14 +15,12 @@ button {
 }
 
 button:active {
-  -webkit-transform: scale(0.98);
-          transform: scale(0.98);
-  -webkit-box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.4);
-          box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.4);
+  transform: scale(0.98);
+  box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.4);
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
   background-color: var(--bg-color);
   line-height: 1.6;
@@ -41,27 +38,16 @@ main {
 }
 
 .grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 1rem;
 }
 
 .grid section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5);
-          box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5);
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5);
 }
 
 /* Tablette (768px+) */
@@ -71,20 +57,13 @@ main {
     margin: 0 auto;
   }
   .grid {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   .grid-item {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 45%;
-            flex: 1 1 45%;
+    flex: 1 1 45%;
   }
 }
-
 /* Desktop (1024px+) */
 @media screen and (min-width: 1024px) {
   .container {
@@ -92,16 +71,12 @@ main {
     padding: 2rem;
   }
   .grid-item {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 30%;
-            flex: 1 1 30%;
+    flex: 1 1 30%;
   }
   .grid section {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -162,15 +137,10 @@ main {
 }
 
 .card {
-  -webkit-box-shadow: 10px 10px 5px #0071eb;
-          box-shadow: 10px 10px 5px #0071eb;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 18rem;
-          flex: 1 1 18rem;
+  box-shadow: 10px 10px 5px #0071eb;
+  flex: 1 1 18rem;
   max-width: 20rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .mini {
@@ -185,10 +155,7 @@ main {
   height: 120px;
   border-radius: 4px;
   margin: 20px;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   max-width: 100%;
 }
 
@@ -198,18 +165,12 @@ main {
     height: 90px;
   }
 }
-
 .mini-film {
   display: inline-block;
   position: relative;
   text-align: center;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .mini-infos {
@@ -218,13 +179,11 @@ main {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .mini-film:hover .mini-img {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .mini-film:hover .mini-infos {
@@ -233,19 +192,35 @@ main {
   margin-top: 5px;
 }
 
+.watched {
+  opacity: 0.6;
+  position: relative;
+}
+
+.watched::after {
+  content: "✓ Vu";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: green;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
 .navbar {
   background: #564d4d;
 }
-
 .navbar .nav-link {
   color: white;
   text-decoration: none;
   margin-left: 2rem;
-  -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
-
 .navbar .nav-link:hover {
   color: var(--secondary-color);
 }
-/*# sourceMappingURL=style.css.map */
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

@@ -4,7 +4,8 @@
   "description": "TP Fil rouge pour le cours de Front End développement (sept-oct 2025), site de streaming",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss:css --style compressed"
   },
   "repository": {
     "type": "git",

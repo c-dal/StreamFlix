@@ -58,8 +58,8 @@
         <!-- Section du film vedette -->
         <section class="hero">
             <h2 id="vedette">Film vedette</h2>
-
-                <article class="hero-card">
+            <button onclick="hideSection(this)"> Afficher / Cacher </button>
+                <article class="hero-card card">
                     <header class="film-header">
                         <h3>Inception</h3>
                         <p class="article-meta">
@@ -86,6 +86,7 @@
 
         <form>
             <h2>Inscription à StreamFlix</h2>
+
             <fieldset class="info-perso">
                 <legend>Informations personnelles</legend>
 
@@ -141,6 +142,7 @@
         <!-- Section thématique pour les films tendances du moment -->
             <section class="tendances">
                 <h2 id="tendances">Tendances actuelles</h2>
+                    <button onclick="hideSection(this)"> Afficher / Cacher </button>
                     <div class="row justify-content-center">
                         <div class="col-md-4 col-lg-3">
                             <div class="card">
@@ -216,6 +218,7 @@
             <section class="recos">
                 <!-- Section thématique pour les films recommandés à l'utilisateur -->
                 <h2 id="recos">Recommandé pour vous</h2>
+                   <button onclick="hideSection(this)"> Afficher / Cacher </button>
                     <div class="row justify-content-center">
                         <div class="col-md-4 col-lg-3">
                             <div class="card">
@@ -294,6 +297,7 @@
             <section class="nouveautes">
                 <!-- Section thématique pour les nouveautés dela plateforme -->
                 <h2 id="nouveautes">Nouveautés</h2>
+                    <button onclick="hideSection(this)"> Afficher / Cacher </button>
                     <div class="row justify-content-center">
                         <div class="col-md-4 col-lg-3">
                             <div class="card">
@@ -372,39 +376,41 @@
 
             <section class="films">
                 <h2>Nos films</h2>
+                <button onclick="hideSection(this)"> Afficher / Cacher </button>
+                <div class="catalogue"> </div>
                 <div class="row justify-content-center">
                     <div class="col-sm-6 col-md-4 col-lg-2">
-                        <div class="card mini-film">
+                        <div class="card mini-film" onclick="toggleWatched(this)">
                             <img class="mini-img" src="images/films/darkknight.webp" alt="Affiche du film The Dark Knight">
                             <span class="mini-infos"> The Dark Knight, 2h32 </span>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-2">
-                        <div class="card mini-film">
+                        <div class="card mini-film" onclick="toggleWatched(this)">
                             <img class="mini" src="images/films/forrest_gump.jpg" alt="Affiche du film Forrest Gump">
                             <span class="mini-infos"> Forrest Gump, 2h22 </span>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-2">
-                        <div class="card mini-film">
+                        <div class="card mini-film" onclick="toggleWatched(this)">
                             <img class="mini" src="images/films/inception.webp" alt="Affiche du film Inception">
                             <span class="mini-infos"> Inception, 2h28 </span>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-2">
-                        <div class="card mini-film">
+                        <div class="card mini-film" onclick="toggleWatched(this)">
                             <img class="mini" src="images/films/Interstellar_film_poster.jpg" alt="Affiche du film Interstellar">
                             <span class="mini-infos"> Interstellar, 2h </span>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-2">
-                        <div class="card mini-film">
+                        <div class="card mini-film" onclick="toggleWatched(this)">
                             <img class="mini" src="images/films/matrix.jpeg" alt="Affiche du film The Matrix">
                             <span class="mini-infos"> The Matrix, 2h16 </span>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-2">
-                        <div class="card mini-film">
+                        <div class="card mini-film" onclick="toggleWatched(this)">
                             <img class="mini" src="images/films/pulp_fiction.jpg" alt="Affiche du film Pulp Fiction"> 
                             <span class="mini-infos"> Pulp Fiction, 2h34 </span>
                         </div>
@@ -414,6 +420,7 @@
 
             <section class="series">
                 <h2>Nos séries</h2>
+                    <button onclick="hideSection(this)"> Afficher / Cacher </button>
                     Affichage des séries
                     <div class="row justify-content-center">
                         <div class="col-sm-6 col-md-4 col-lg-2">
@@ -431,10 +438,7 @@
         Copyright <br>
     </footer>
     
+    <script src="js/script.js"></script>
 
-    <script>
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-    </script>
 </body>
 </html>
