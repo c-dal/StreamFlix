@@ -1,0 +1,20 @@
+{
+  "name": "streamflixchloe",
+  "version": "1.0.0",
+  "description": "TP Fil rouge pour le cours de Front End développement (sept-oct 2025), site de streaming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-dal/StreamFlixChloe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c-dal/StreamFlixChloe/issues"
+  },
+  "homepage": "https://github.com/c-dal/StreamFlixChloe#readme"
+}
