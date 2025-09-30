@@ -16,6 +16,9 @@
         Aller directement au contenu principal
     </a>
 
+    <div id="loader"></div>
+    <div id="error"></div>
+
     <header class="site-header" role="banner">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -60,27 +63,14 @@
                 <!-- Section du film vedette -->
                 <section class="hero">
                     <h2 id="vedette">Film vedette</h2>
-                        <article class="hero-card card">
-                            <header class="film-header">
-                                <h3>Inception</h3>
-                            </header>
-
-                            <div class="film-bg">
-                                <img src="images/hero.webp" class="vertical-align-center" alt="Affiche Inception" style="width:100%;">
-                                <div class="film-description overlay">
-                                    Description : "Un voleur qui s'infiltre dans les rêves des autres pour voler leurs 
-                                    secrets découvre qu'il doit réaliser l'impossible : planter une idée plutôt que de 
-                                    la voler."
-                                    <br>
-                                    Détails à ajouter avec du css : <br>
-                                    2010, 2h28, 4.5/5, SciFi, Thriller
-                                </div>
-                            </div>
-
-                            <footer class="film-footer">
-                                <a href="index.html#inception" class="read-more">Voir le film</a>
-                            </footer>
-                        </article>          
+                    <div id="27205"></div>
+                </section>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <!-- Section du film vedette -->
+                <section class="hero">
+                    <h2 id="vedette">Film vedette</h2>
+                    <div id="155"></div>
                 </section>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -356,7 +346,6 @@
                             </div>
                         </div>
                     </div>
-
             </section>
 
             <section class="films">
@@ -425,5 +414,6 @@
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
+    <script src="js/script.js"></script> 
 </body>
 </html>
