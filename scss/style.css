@@ -139,7 +139,7 @@ main {
 .card {
   box-shadow: 10px 10px 5px #0071eb;
   flex: 1 1 18rem;
-  max-width: 20rem;
+  max-width: 40rem;
   align-items: center;
   margin: 20px;
   padding: 10px;
@@ -212,4 +212,8 @@ main {
 }
 .navbar .nav-link:hover {
   color: var(--secondary-color);
+}
+
+section {
+  padding: 10px;
 }/*# sourceMappingURL=style.css.map */

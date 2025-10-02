@@ -92,4 +92,16 @@ async function getMovieWithFetch(movieId) {
 
 // Utilisation
 getMovieWithFetch(27205); // Inception
+
 getMovieWithFetch(155); // DarkKnight
+getMovieWithFetch(157336); // Interstellar
+getMovieWithFetch(680); // PulpFiction
+
+getMovieWithFetch(122); // TheLordOfTheRings
+getMovieWithFetch(603); // TheMatrix
+getMovieWithFetch(13); // ForrestGump
+
+getMovieWithFetch(180); // Minority Report
+getMovieWithFetch(497); // TheGreenMile
+getMovieWithFetch(550); // FightClub
+
